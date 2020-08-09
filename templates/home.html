@@ -1,0 +1,62 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="{% static 'blogapp/css/blog.css' %}" type="text/css" rel="stylesheet">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+<nav class="menum navbar navbar-light navbar-expand-md justify-content-center fixed-top">
+    <div class="container">
+
+    <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
+      <ul class="topBotomBordersOut navbar-nav mx-auto text-center">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="https://www.facebook.com/profile.php?id=100010009094989">Facebook</a></li>
+        <li class="nav-item"> <a class="nav-link" href="https://www.instagram.com/im_darth_vader_/">Instagram</a> 
+        <li class="nav-item"> <a class="nav-link" href="https://blandus-742.tumblr.com/">Tumblr</a> 
+        <li class="nav-item"> <a class="nav-link" href="https://www.youtube.com/watch?v=sT5I4pNN30U">Blog</a> 
+        <li class="nav-item"> <a class="nav-link" href="https://www.youtube.com/watch?v=KbWbK2qRe7U">Contact</a> 
+        </li>
+      </ul>
+    </div>
+    </div>   
+  </nav>
+  <div class="intro">
+    <br>
+  <p>A Blog which consists of all shit and stuff. You might see anything. Art, Tech Posts,Philosophical Posts and stuff.<br>
+     Hyper Links might work.NeverMind! Have Fookin fun!<br></p>
+     <br>
+  </div>
+<ul>
+  
+    {% for post in object_list %}
+    <div class="posts">
+    <h2>{{ post.title }}</h2>
+    <img src = "{{ post.cover.url }}"alt="{{ post.title }}">
+    <h3>{{ post.content }}</h3>
+    </div>
+    {% endfor %}
+</ul>
+<!--Bottom Footer-->
+<div class="bottom section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="copyright">
+          <p>© <span>2020</span> <a href="#" class="transition">Bharath K</a> Simply A Test Blog.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Bottom Footer-->
+</body>
+</html>
